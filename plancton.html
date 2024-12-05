@@ -28,6 +28,17 @@
       background-size: cover; /* Assure que l'image couvre toute la zone */
       background-position: center;
       height: 100vh; /* 100% de la hauteur de la fenêtre */
+      position: relative; /* Nécessaire pour positionner la barre de recherche sur l'image */
+    }
+
+    /* Positionner la barre de recherche sur l'image en haut et au centre */
+    .search-bar {
+      position: absolute;
+      top: 20px; /* Un peu d'écart du haut */
+      left: 68%;
+      transform: translateX(-50%);
+      z-index: 1; /* Assure que la barre de recherche est au-dessus de l'image */
+      width: 50%; /* Ajustez la largeur de la barre de recherche selon vos besoins */
     }
 
     /* Masque avec opacité et prise en compte de la hauteur totale */
@@ -56,18 +67,21 @@
 <body>
 
   <div class="bg-image shadow-2-strong">
+    <!-- Barre de recherche positionnée sur l'image -->
+    <div class="search-bar">
+      <div class="input-group col-sm-7 input-group-lg w-25">
+        <div class="input-group-prepend">
+          <span class="input-group-text google"><img src="/img/new_logo.webp"></span>
+        </div>
+        <input type="text" class="form-control ">
+        <div class="input-group-append">
+          <span class="input-group-text microphone"><img src="https://img.icons8.com/nolan/48/000000/microphone.png"></span>
+        </div>
+      </div>
+    </div>
+
     <div class="mask">
       <div class="container">
-
-        <div class="input-group col-sm-7 input-group-lg w-25">
-          <div class="input-group-prepend">
-            <span class="input-group-text google"><img src="/img/new_logo.webp"></span>
-          </div>
-          <input type="text" class="form-control ">
-          <div class="input-group-append">
-            <span class="input-group-text microphone"><img src="https://img.icons8.com/nolan/48/000000/microphone.png"></span>
-          </div>
-        </div>
 
         <div class="text-white">
           <div class="jumbotron justify-content-center text-center">

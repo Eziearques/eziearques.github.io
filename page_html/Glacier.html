@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+  <!-- Ajout du favicon et du manifest -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  
+  <style>
+    /* Réinitialiser les marges et le padding de body et html */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* S'assurer que l'image de fond couvre toute la hauteur de la fenêtre */
+    .bg-image {
+      background-image: url('./img/world_map.png');
+      background-size: cover; /* Assure que l'image couvre toute la zone */
+      background-position: center;
+      height: 100vh; /* 100% de la hauteur de la fenêtre */
+    }
+
+    /* Masque avec opacité et prise en compte de la hauteur totale */
+    .mask {
+      background-color: rgba(0, 0, 0, 0.8);
+      height: 100%;
+    }
+
+    /* S'assurer qu'aucune marge n'est appliquée à la jumbotron */
+    .jumbotron {
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    /* Éviter l'espace supplémentaire au bas de la page */
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-image shadow-2-strong">
+    <div class="mask">
+      <div class="container">
+
+        <div class="input-group col-sm-7 input-group-lg w-25">
+          <div class="input-group-prepend">
+            <span class="input-group-text google"><img src="/img/new_logo.webp"></span>
+          </div>
+          <input type="text" class="form-control ">
+          <div class="input-group-append">
+            <span class="input-group-text microphone"><img src="https://img.icons8.com/nolan/48/000000/microphone.png"></span>
+          </div>
+        </div>
+
+        <div class="text-white">
+          <div class="jumbotron justify-content-center text-center">
+            <h1>Le plancton</h1>
+          </div>
+          <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+
+          <div class="jumbotron justify-content-center text-center mt-auto p-2">
+            <button type="button" class="btn btn-primary btn-lg" href="/index.html">Récupérer le Trésor</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

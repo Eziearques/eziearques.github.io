@@ -63,6 +63,21 @@ function resetVisitedPages() {
     alert("Tous les cookies ont été supprimés.");
 }
 
+// Fonction pour afficher une image avec succès
+function showImageOnSuccess(nom_succes) {
+    const image = document.createElement('img'); // Crée un élément image
+    image.src = 'img/succes/' + nom_succes + '.png'; // Chemin de votre image
+    image.alt = 'Succès'; // Ajoute un texte alternatif
+    image.className = 'animated-image'; // Ajoute la classe CSS pour les styles/animations
+
+    document.body.appendChild(image); // Ajoute l'image au body
+
+    // Supprime l'image après 3 secondes
+    setTimeout(() => {
+        image.remove();
+    }, 3000);
+}
+
 // Récupérer les pages visitées à partir du cookie
 let visitedPages = getCookie('visitedPages');
 visitedPages = visitedPages ? visitedPages.split(',') : [];
@@ -78,5 +93,5 @@ if (!visitedPages.includes(currentPage)) {
 
 // Vérifier si toutes les pages ont été visitées
 if (sitePages.every(page => visitedPages.includes(page))) {
-    alert('Félicitations ! Vous avez visité toutes les pages du site.');
+    showImageOnSuccess('Explorateur'); // Appelle la fonction avec le nom de l'image
 }

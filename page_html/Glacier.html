@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bootstrap.css"> <!-- Remontée d'un niveau pour css -->
 
   <!-- Ajout du favicon et du manifest -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="../icon.png"> <!-- Remontée d'un niveau pour icônes -->
+  <link rel="manifest" href="../site.webmanifest"> <!-- Remontée d'un niveau pour manifest -->
   <meta name="theme-color" content="#fafafa">
   
   <style>
@@ -24,7 +24,7 @@
 
     /* S'assurer que l'image de fond couvre toute la hauteur de la fenêtre */
     .bg-image {
-      background-image: url('./img/world_map.png');
+      background-image: url('../img/world_map.png'); /* Remontée d'un niveau pour image de fond */
       background-size: cover; /* Assure que l'image couvre toute la zone */
       background-position: center;
       height: 100vh; /* 100% de la hauteur de la fenêtre */
@@ -61,7 +61,7 @@
 
         <div class="input-group col-sm-7 input-group-lg w-25">
           <div class="input-group-prepend">
-            <span class="input-group-text google"><img src="/img/new_logo.webp"></span>
+            <span class="input-group-text google"><img src="../img/new_logo.webp"></span> <!-- Remontée d'un niveau pour le logo -->
           </div>
           <input type="text" class="form-control ">
           <div class="input-group-append">
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <script src="js/app.js"></script>
+  <script src="../js/app.js"></script> <!-- Remontée d'un niveau pour js -->
 </body>
 
 </html>

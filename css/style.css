@@ -259,3 +259,37 @@ img {
   padding: 0;
   box-sizing: border-box;
 }
+
+/*----------------------------------------------------------------*/
+/*animation du succès*/
+.animated-image {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 307.5px;
+  /* Taille réduite de moitié */
+  height: 60px;
+  /* Taille réduite de moitié */
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+/* Animation pour faire apparaître et disparaître l'image */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

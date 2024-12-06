@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équilibre Gaz</title>
+    <link rel="stylesheet" href="../css/equilibre_gaz.css">
+</head>
+
+<body>
+    <div class="bg-image shadow-2-strong">
+        <h1>Mini-jeu : Équilibre gaz</h1>
+
+        <!-- Conteneur pour le timer et le message -->
+        <div id="status-container">
+            <p id="timer">Temps restant : 10s</p>
+            <p id="message">Maintenez les niveaux équilibrés !</p>
+        </div>
+
+        <div id="game-container">
+            <!-- Barres d'équilibre -->
+            <div class="status-bar" id="co2-bar">CO₂</div>
+            <div class="status-bar" id="o2-bar">O₂</div>
+
+            <!-- Conteneur pour les bulles -->
+            <div id="bubble-container"></div>
+        </div>
+
+        <button id="start-button" onclick="startGame()">Commencer le jeu</button>
+        <button id="restart-button" style="display: none;" onclick="restartGame()">Recommencer</button>
+    </div>
+
+    <script src="../js/equilibre_gaz.js"></script>
+</body>
+
+</html>

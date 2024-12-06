@@ -1,99 +1,53 @@
-// Variable globale
-let game = 0; // défi gamification
-const sitePages = [
-    'page_html/Biodiversite.html',
-    'page_html/Glacier.html',
-    'page_html/Muscle_Maree.html',
-    'page_html/Fievre_Blanchissement.html',
-];
+// Variables globales
+let game = 0; // État de la gamification (0 = désactivée, 1 = activée)
 
-// Fonction pour obtenir la valeur d'un cookie
-function getCookie(name) {
-    const cookies = document.cookie.split('; ');
-    for (let i = 0; i < cookies.length; i++) {
-        const [key, value] = cookies[i].split('=');
-        if (key === name) {
-            return decodeURIComponent(value); // Retourne la valeur décodée
-        }
+// Fonction pour afficher ou masquer le bouton
+function updateButtonVisibility() {
+    const button = document.getElementById('redirect-button');
+    console.log(`updateButtonVisibility appelée, état de game: ${game}`);
+    if (button) {
+        button.style.display = game === 1 ? 'block' : 'none';
+    } else {
+        console.error("Le bouton 'redirect-button' n'existe pas.");
     }
-    return null; // Cookie non trouvé
 }
 
-// Fonction pour définir un cookie
-function setCookie(name, value) {
-    document.cookie = `${name}=${encodeURIComponent(value)};path=/;`;
+// Fonction pour rediriger vers une page
+function redirectToPage() {
+    if (game === 1) {
+        window.location.href = 'page_html/equilibre_gaz.html'; // Remplacez par l'URL réelle de la page
+    } else {
+        alert("Gamification non activée !");
+    }
 }
 
-// Fonction qui initialise la gamification
+// Fonction pour activer/désactiver la gamification
 function activateGame() {
-    if (game === 0) {
-        game = 1;
-        console.log("La variable game est maintenant :", game);
-        alert("Gamification activée !");
-
-        // Vérifie si un cookie "session" existe
-        if (!getCookie("session")) {
-            creation_cookie_session();
-        } else {
-            console.log("Un cookie de session existe déjà :", getCookie("session"));
-            alert("Un cookie de session est déjà actif.");
-        }
-    } else if (game === 1) {
-        game = 0;
-        alert("Gamification désactivée :(");
-    }
-}
-
-// Fonction pour générer un numéro de session aléatoire
-function generateSessionNumber() {
-    return Math.floor(Math.random() * 1000000); // Un numéro entre 0 et 999999
-}
-
-// Fonction pour générer un cookie de session
-function creation_cookie_session() {
-    const numero_session = generateSessionNumber();
-    setCookie('session', numero_session);
-    alert("Le cookie a été généré avec le numéro : " + numero_session);
+    game = game === 0 ? 1 : 0; // Alterne l'état de game
+    console.log(`Game est maintenant: ${game}`);
+    alert(game === 1 ? "Gamification activée !" : "Gamification désactivée !");
+    updateButtonVisibility();
 }
 
 // Fonction pour réinitialiser les cookies
 function resetVisitedPages() {
-    document.cookie = "visitedPages=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-    alert("Tous les cookies ont été supprimés.");
+    console.log("Réinitialisation des cookies déclenchée");
+    document.cookie = "visitedPages=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;"; // Supprime le cookie
+    alert("Les cookies des pages visitées ont été réinitialisés.");
+    console.log("Cookie 'visitedPages' supprimé.");
 }
 
-// Fonction pour afficher une image avec succès
-function showImageOnSuccess(nom_succes) {
-    const image = document.createElement('img'); // Crée un élément image
-    image.src = 'img/succes/Explorateur.png'; // Chemin de votre image
-    image.alt = 'Succès'; // Ajoute un texte alternatif
-    image.className = 'animated-image'; // Ajoute la classe CSS pour les styles/animations
+// Attendre que le DOM soit entièrement chargé avant d'exécuter le script
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('redirect-button');
+    if (button) {
+        console.log("Bouton 'redirect-button' trouvé dans le DOM.");
+        button.style.display = 'none'; // Masqué par défaut
+        button.addEventListener('click', redirectToPage); // Associer l'événement clic
+    } else {
+        console.error("Le bouton avec l'ID 'redirect-button' n'existe pas.");
+    }
 
-    document.body.appendChild(image); // Ajoute l'image au body
-
-    // Supprime l'image après 3 secondes
-    setTimeout(() => {
-        image.remove();
-    }, 3000);
-}
-
-// Récupérer les pages visitées à partir du cookie
-let visitedPages = getCookie('visitedPages');
-visitedPages = visitedPages ? visitedPages.split(',') : [];
-
-// Identifier la page actuelle
-const currentPage = window.location.pathname.replace(/^\//, ''); // Extrait le chemin relatif
-
-
-
-// Ajouter la page actuelle aux pages visitées si elle n'est pas déjà présente
-if (!visitedPages.includes(currentPage)) {
-    visitedPages.push(currentPage);
-    setCookie('visitedPages', visitedPages.join(',')); // Met à jour le cookie
-    console.log('Pages visitées :', visitedPages);
-}
-
-// Vérifier si toutes les pages ont été visitées
-if (sitePages.every(page => visitedPages.includes(page))) {
-    showImageOnSuccess(); // Appelle la fonction avec le nom de l'image
-}
+    // Appeler updateButtonVisibility après la vérification
+    updateButtonVisibility();
+});

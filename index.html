@@ -45,6 +45,36 @@
 
   <img src="img/world_map.png">
 
+
+  <div id="trophy_plancton" style="position:fixed; top:20px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_chest" style="position:fixed; top:70px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_schrimp" style="position:fixed; top:120px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_1" style="position:fixed; top:170px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_2" style="position:fixed; top:220px; left:30px; image-rendering: pixelated;"></div>
+
+
+  <script>
+    // You can dynamically set the innerHTML
+    // of a container to include an image element
+    const imageContainerPlancton = document
+      .getElementById("trophy_plancton");
+    imageContainerPlancton.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png", id="plancton_void", alt="">`;
+
+    const imageContainerChest = document
+      .getElementById("trophy_chest");
+    imageContainerChest.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png">`;
+
+    const imageContainerSchrimp = document
+      .getElementById("trophy_schrimp");
+    imageContainerSchrimp.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png">`;
+  </script>
+
+
+
+
 </body>
 
 </html>

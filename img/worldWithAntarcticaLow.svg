@@ -25,15 +25,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.50541665"
-     inkscape:cx="599.50538"
-     inkscape:cy="727.12286"
+     inkscape:zoom="2"
+     inkscape:cx="856"
+     inkscape:cy="590.25"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
      inkscape:window-y="1609"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1">
     <style
@@ -93,14 +93,44 @@
        inkscape:label="Sericus west" />
     <path
        style="display:inline;fill:#9fdbe9;fill-opacity:1;stroke:#d5fbf7;stroke-width:12.015;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 161.42128,1080 H 1801.4088 v 498.8246 H 161.42128 Z"
+       d="M 161.42128,1080 C 761.27953,961.86005 1307.942,961.86005 1801.4088,1080 v 498.8246 H 161.42128 Z"
        id="Antarcticus"
-       inkscape:label="Antarcticus" />
+       inkscape:label="Antarcticus"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <g
+     id="g2"
+     inkscape:label="Mers">
     <path
        style="fill:#9fdbe9;stroke:#d5fbf7;stroke-width:7;stroke-linecap:round;stroke-linejoin:round"
        d="m 910.20413,579.09791 -0.0647,-17.78773 42.94931,-46.42362 44.80336,-20.68461 49.6831,30.98688 16.6458,29.5515 44.765,3.70981 3.9572,44.51773 -60.8409,0.49464 -66.50082,26.63046 z"
        id="Mediterranee"
        inkscape:label="Mediterranee" />
+    <path
+       style="fill:#9fdbe9;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1064.221,554.74033 -16.6458,-29.5515 14.7125,-27.20029 40.3192,-12.98483 18.8688,21.75641 6.925,30.79142 -11.2531,16.44683 z"
+       id="Mer_noire"
+       inkscape:label="Mer_noire" />
+    <path
+       style="fill:#9fdbe9;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1174.3276,497.53801 -44.2826,6.09879 7.4143,42.11002 8.9376,28.15872 41.0122,0.35355 -7.3363,-46.40388 z"
+       id="Mer_caspienne"
+       inkscape:label="Mer_caspienne" />
+    <path
+       style="fill:#9fdbe9;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 542.625,484.875 -26.375,22.25 22.25,12 0.75,25.875 52.5,-0.5 12.625,-20.625 -41,-35.25 z"
+       id="Great_lakes"
+       inkscape:label="Great_lakes" />
+    <path
+       style="fill:#9fdbe9;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1096.9901,601.59893 -19.3273,0.30765 -8.2878,7.84342 24.5,56.25 26.5367,24.46531 15.9386,-14.19636 z"
+       id="Mer_rouge"
+       inkscape:label="Mer_rouge" />
+    <path
+       style="fill:#9fdbe9;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1150.4627,590.25738 -12.1092,9.45756 11.137,24.30679 19.0035,17.94284 14.4279,-20.5413 4.8407,-8.18492 z"
+       id="Golf_persian"
+       inkscape:label="Golf_persian" />
   </g>
   <g
      id="g1"

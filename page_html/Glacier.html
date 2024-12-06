@@ -5,94 +5,207 @@
   <script src="/js/app.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Impact Global</title>
   <link rel="stylesheet" href="/css/bootstrap.css">
   <meta name="description" content="">
-
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
-
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon.png">
-
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+  <style>
+    /* Image container styles */
+    .bg-image {
+      position: relative;
+      background-image: url('../img/world_map.png');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+    }
+
+    /* Content container */
+    .content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+      max-width: 90%; /* Reduced max width to fit within the screen */
+      margin: 70px auto 0; /* Added margin-top to push content down */
+      text-align: center;
+      overflow: hidden; /* Ensure no white border when text overflows */
+    }
+
+    /* Image container for the two images and title */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      align-items: center; /* Align the images and title vertically */
+    }
+
+    .image-container img {
+      max-width: 30%; /* Adjusted image size to fit well on the screen */
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Jumbotron style */
+    .jumbotron {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    /* Styling for text */
+    h1, h2, h3 {
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2rem; /* Smaller size for h1 */
+    }
+
+    h2 {
+      font-size: 1.2rem; /* Smaller size for h2 */
+    }
+
+    h3 {
+      font-size: 1rem; /* Smaller size for h3 */
+    }
+
+    p {
+      font-size: 0.9rem; /* Reduced font size for paragraphs */
+      line-height: 1.5;
+      margin-bottom: 10px;
+      word-wrap: break-word; /* Ensure long words break properly */
+      overflow-wrap: break-word; /* Added for better cross-browser support */
+    }
+
+    /* Add borders and padding for sections */
+    .section-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius:30px;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-box h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    /* Button styling */
+    .btn-primary {
+      padding: 10px 20px;
+      font-size: 1rem; /* Reduced font size for the button */
+    }
+
+    /* Search bar styling */
+    .search-bar {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 60%; /* Réduire la largeur de la barre de recherche */
+    }
+
+    .search-bar .input-group {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar .form-control {
+      font-size: 0.9rem; /* Réduire la taille de la police */
+      padding: 5px 5px; /* Réduire le padding autour du texte */
+    }
+
+    .search-bar .input-group-text {
+      padding: 5px 5px; /* Réduire le padding des icônes */
+    }
+  </style>
 </head>
 
 
 
 <body>
-
-<!-- Add your site or application content here -->
-
 <!-- Background image -->
-<div class="bg-image shadow-2-strong" style="background-image: url('/img/world_map.png'); height: 100vh;">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.8); height : 100%">
+<div class="bg-image">
+  <div class="mask"></div>
 
-    <div class="container d-flex justify-content-center align-text-top mx-auto p-3">
-
-      <div class="input-group col-sm-7 input-group-lg w-25">
-        <div class="input-group-prepend">
-          <span class="input-group-text google"><img src="/img/new_logo.webp"></span>
-        </div>
-        <input type="text" class="form-control ">
-        <div class="input-group-append">
-          <span class="input-group-text microphone"><img src="https://img.icons8.com/nolan/48/000000/microphone.png"></span>
-        </div>
+  <!-- Search bar -->
+  <div class="search-bar">
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+           <img src="/img/new_logo.webp" alt="Logo">
+        </span>
       </div>
-
-    </div>
-
-    <div class="container d-flex align-items-center justify-content-center text-center h-100">
-
-      <div class="text-white" data-mdb-theme="dark">
-
-        <br><br><br>
-        <div class="jumbotron justify-content-center text-center">
-          <h1>Impact global de perturbations locales</h1>
-        </div>
-
-        <!-- Add images above the text -->
-        
-         
-        
-        <!-- Add the biodiversity and microbiote images under the grid -->
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <picture>
-              <img src="/img/image_Antartique.jpg" class="img-fluid" alt="Antartique" width="50%" height="auto">
-            </picture>
-          </div>
-          <div class="col-md-6">
-            <picture>
-              <img src="/img/image_inflamation.jpg" class="img-fluid" alt="inflamation" width="50%" height="auto">
-            </picture>
-          </div>
-        </div>
-        
-      
-        <!-- Styled paragraphs -->
-        <p class="fs-4 mb-4">
-          La dislocation des plateformes glaciaires ou la dérive des icebergs affecte non seulement les communautés benthiques locales, mais aussi des écosystèmes à grande échelle, illustrant l’interconnexion des systèmes.</p>
-        <p class="fs-4 mb-4">
-          De façon similaire, une blessure ou une inflammation localisée (comme une infection dans une région spécifique) peut entraîner des répercussions systémiques, comme de la fièvre ou une septicémie, prouvant l’interdépendance des parties du corps.
-          </p>
-
+      <input type="text" class="form-control" placeholder="Recherche...">
+      <div class="input-group-append">
+        <span class="input-group-text"><img src="https://img.icons8.com/nolan/48/000000/microphone.png" alt="Microphone"></span>
       </div>
     </div>
   </div>
+
+  <div class="content container">
+    <!-- Title -->
+
+    <!-- Images -->
+    <div class="content">
+      <!-- Image container for the two images -->
+      <div class="image-container">
+        <img src="/img/image_Antartique.jpg" alt="Carte du monde">
+        <img src="/img/image_inflamation.jpg" alt="Carte du monde">
+      </div>
+
+
+    <h1>Impact Global de Perturbations Locales</h1>
+
+    <!-- Fonctionnement Section -->
+    <div class="section-box">
+      <h3>Fonctionnement</h3>
+      <p><strong>Océan Austral :</strong> La dislocation des plateformes glaciaires ou la dérive des icebergs affecte non seulement les communautés benthiques locales, mais aussi des écosystèmes à grande échelle, illustrant l’interconnexion des systèmes.</p>
+      <p><strong>Corps humain :</strong> Une blessure ou une inflammation localisée (comme une infection dans une région spécifique) peut entraîner des répercussions systémiques, comme de la fièvre ou une septicémie, prouvant l’interdépendance des parties du corps.</p>
+    </div>
+
+    <!-- Conséquences Section -->
+    <div class="section-box">
+      <h3>Conséquences communes</h3>
+      <p><strong>Pour l’océan :</strong> La perte de la glace provoque des perturbations dans la biodiversité marine locale et mondiale.</p>
+      <p><strong>Pour le corps :</strong> Une inflammation prolongée peut entraîner des complications comme des lésions organiques ou une réponse immunitaire déséquilibrée.</p>
+    </div>
+
+    <!-- Button -->
+    <button class="btn btn-primary" onclick="window.location.href='/index.html'">Retour à l'accueil</button>
+  </div>
 </div>
-<!-- /Background image
- 
-Océan Austral : La dislocation des plateformes glaciaires ou la dérive des icebergs affecte non seulement les communautés benthiques locales, mais aussi des écosystèmes à grande échelle, illustrant l’interconnexion des systèmes.
-Corps humain : De façon similaire, une blessure ou une inflammation localisée (comme une infection dans une région spécifique) peut entraîner des répercussions systémiques, comme de la fièvre ou une septicémie, prouvant l’interdépendance des parties du corps.
-
--->
-
 </body>
 
 </html>

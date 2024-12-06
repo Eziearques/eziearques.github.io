@@ -179,23 +179,28 @@ const countryCapitals = {
   };
 
 
-  const API_KEY = '519229d4ef90867d21e905506d58ccdb'; 
+  const API_KEY = '87675f9bb440b8028ce5912a481e7a22'; 
+
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const code = urlParams.get('code'); // 'code' est le nom du paramètre
 
 
 // Fonction pour récupérer les prévisions météo
-async function getWeatherForecast(city) {
-    city = countryCapitals[city]; // On récupère la capitale en fonction du pays
+async function getWeatherForecast(countryCode) {
+    const city = countryCapitals[countryCode.toUpperCase()]; // Utiliser le code pays pour trouver la capitale
     if (!city) {
         alert('Code de pays non valide');
         return;
     }
+
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`);
         if (!response.ok) {
             throw new Error('Ville non trouvée');
         }
         const data = await response.json();
-        displayForecast(data); // Appel de la fonction pour afficher les prévisions
+        displayForecast(data); // Afficher les prévisions
     } catch (error) {
         alert(error.message);
     }
@@ -205,31 +210,17 @@ async function getWeatherForecast(city) {
 function displayForecast(data) {
     document.getElementById('city-name').textContent = `Prévisions pour ${data.city.name}`;
     const forecastContainer = document.getElementById('forecast-container');
-    forecastContainer.innerHTML = ''; // Clear previous forecasts
+    forecastContainer.innerHTML = ''; // Effacer les prévisions précédentes
 
-    // Préparer les données pour le graphique
     const temperatures = [];
     const labels = [];
 
-    // Extraire les températures et les dates pour les graphiques
+    // Extraire les températures et les dates
     data.list.forEach(item => {
-        // Prendre une prévision tous les jours à 12h00
         if (new Date(item.dt * 1000).getHours() === 12) { 
             temperatures.push(item.main.temp);  // Température en °C
             labels.push(new Date(item.dt * 1000).toLocaleDateString());  // Date
         }
-    });
-
-    // Afficher les prévisions météo sous forme de texte
-    data.list.forEach(item => {
-        const forecastItem = document.createElement('div');
-        forecastItem.className = 'forecast-item';
-        forecastItem.innerHTML = `
-            <p>Date: ${new Date(item.dt * 1000).toLocaleString()}</p>
-            <p>Température: ${item.main.temp}°C</p>
-            <p>Conditions: ${item.weather[0].description}</p>
-        `;
-        forecastContainer.appendChild(forecastItem);
     });
 
     // Afficher le graphique
@@ -239,63 +230,49 @@ function displayForecast(data) {
 // Fonction pour afficher le graphique avec Chart.js
 function displayChart(temperatures, labels) {
     const ctx = document.getElementById('forecast-chart').getContext('2d');
-    const chart = new Chart(ctx, {
-        type: 'line',  // Type du graphique (linéaire ici)
+    if (!ctx) {
+        console.error("Le canvas n'a pas été trouvé.");
+        return;
+    }
+
+    new Chart(ctx, {
+        type: 'line',
         data: {
-            labels: labels,  // Les dates
+            labels: labels,
             datasets: [{
                 label: 'Température (°C)',
-                data: temperatures,  // Les températures
+                data: temperatures,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderWidth: 1,
-                fill: true,  // Remplissage sous la courbe
-                pointRadius: 5,  // Rayon des points
-                pointHoverRadius: 8,  // Rayon des points au survol
-                pointBackgroundColor: 'rgba(75, 192, 192, 1)',  // Couleur des points
-                pointBorderColor: 'rgba(255, 255, 255, 1)',  // Couleur des bordures des points
-                pointBorderWidth: 2,  // Largeur de la bordure des points
+                fill: true
             }]
         },
         options: {
             responsive: true,
             scales: {
                 x: {
-                    title: {
-                        display: true,
-                        text: 'Date'
-                    }
+                    title: { display: true, text: 'Date' }
                 },
                 y: {
-                    title: {
-                        display: true,
-                        text: 'Température (°C)'
-                    }
-                }
-            },
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            return tooltipItem.raw + '°C';  // Afficher la température dans l'info-bulle
-                        }
-                    }
+                    title: { display: true, text: 'Température (°C)' }
                 }
             }
         }
     });
 }
 
+// Si un code pays est passé dans l'URL, récupérer les prévisions automatiquement
+if (code) {
+    getWeatherForecast(code);
+}
 
-// Écouter l'événement de clic sur le bouton pour récupérer les prévisions
-document.getElementById('get-weather').addEventListener('click', () => {
-    const city = document.getElementById('city-input').value;
-    if (city) {
-        getWeatherForecast(city); // Appel de la fonction avec la ville entrée
+// Écouter l'événement 'blur' sur l'entrée du code pays
+document.getElementById('country-code').addEventListener('blur', () => {
+    const countryCode = document.getElementById('country-code').value.trim();
+    if (countryCode) {
+        getWeatherForecast(countryCode); // Appel de la fonction pour récupérer les prévisions
     } else {
-        alert('Veuillez entrer un nom de ville');
+        alert('Veuillez entrer un code de pays');
     }
 });
-
-
-

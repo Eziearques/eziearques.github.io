@@ -1,4 +1,4 @@
-.map__image path{
+.land path{
   fill: #4e1d0a;
   stroke: #FFF;
   stroke-width: 1px;
@@ -10,6 +10,17 @@
   stroke: #FFF;
   stroke-width: 1px;
   transition: fill 0.3s;
+}
+
+.mers path{
+  fill: #0dcaf0;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+
+.mers path:hover{
+  fill: #0a53be;
 }
 
 .oceans path:hover{

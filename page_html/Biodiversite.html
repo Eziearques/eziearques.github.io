@@ -5,24 +5,27 @@
   <script src="/js/app.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impact Global</title>
+  <title></title>
   <link rel="stylesheet" href="/css/bootstrap.css">
   <meta name="description" content="">
+
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
+
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon.png">
+
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#fafafa">
   <style>
     /* Image container styles */
     .bg-image {
       position: relative;
-      background-image: url('../img/world_map.png');
+      background-image: url('/img/world_map.png');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -64,7 +67,7 @@
     }
 
     .image-container img {
-      max-width: 30%; /* Adjusted image size to fit well on the screen */
+      max-width: 20%; /* Adjusted image size to fit well on the screen */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -152,9 +155,10 @@
   </style>
 </head>
 
-
-
 <body>
+
+<!-- Add your site or application content here -->
+
 <!-- Background image -->
 <div class="bg-image">
   <div class="mask"></div>
@@ -174,38 +178,31 @@
     </div>
   </div>
 
-  <div class="content container">
-    <!-- Title -->
+  <div class="content">
+    <!-- Image container for the two images -->
+    <div class="image-container">
+      <img src="/img/image_biodiversite.jpg" alt="Carte du monde">
+      <img src="/img/image_microbiote.jpg" alt="Carte du monde">
+    </div>
 
-    <!-- Images -->
-    <div class="content">
-      <!-- Image container for the two images -->
-      <div class="image-container">
-        <img src="/img/image_Antartique.jpg" alt="Carte du monde">
-        <img src="/img/image_inflamation.jpg" alt="Carte du monde">
-      </div>
-
-
-    <h1>Impact Global de Perturbations Locales</h1>
+    <h1>Biodiversité et résilience cachées</h1>
 
     <!-- Fonctionnement Section -->
     <div class="section-box">
-      <h3>Fonctionnement</h3>
-      <p><strong>Océan Austral :</strong> La dislocation des plateformes glaciaires ou la dérive des icebergs affecte non seulement les communautés benthiques locales, mais aussi des écosystèmes à grande échelle, illustrant l’interconnexion des systèmes.</p>
-      <p><strong>Corps humain :</strong> Une blessure ou une inflammation localisée (comme une infection dans une région spécifique) peut entraîner des répercussions systémiques, comme de la fièvre ou une septicémie, prouvant l’interdépendance des parties du corps.</p>
+      <p>Contrairement à l’idée reçue d’un océan peu diversifié, cette région abrite une biodiversité exceptionnelle avec plus de 9064 espèces. Cependant, cette richesse est vulnérable aux changements rapides de son environnement. .</p>
     </div>
 
-    <!-- Conséquences Section -->
     <div class="section-box">
-      <h3>Conséquences communes</h3>
-      <p><strong>Pour l’océan :</strong> La perte de la glace provoque des perturbations dans la biodiversité marine locale et mondiale.</p>
-      <p><strong>Pour le corps :</strong> Une inflammation prolongée peut entraîner des complications comme des lésions organiques ou une réponse immunitaire déséquilibrée.</p>
+      <p>De manière similaire, le microbiote humain (les milliards de microorganismes qui peuplent le corps) constitue une biodiversité essentielle à la santé. Ce microbiote, bien que résilient, est sensible aux perturbations comme les antibiotiques ou une mauvaise alimentation, ce qui peut entraîner des déséquilibres et des maladies.</p>
     </div>
 
-    <!-- Button -->
-    <button class="btn btn-primary" onclick="window.location.href='/index.html'">Retour à l'accueil</button>
+    <div class="jumbotron justify-content-center text-center mt-auto p-2">
+      <button type="button" class="btn btn-primary btn-lg" href="/index.html">Récupérer le Trésor</button>
+    </div>
   </div>
 </div>
+<!-- /Background image -->
+
 </body>
 
 </html>

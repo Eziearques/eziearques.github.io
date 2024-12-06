@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="fr">
+<html class="no-js" lang="">
 
 <head>
   <script src="/js/app.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impact Global</title>
+  <title>Muscle et Marée</title>
   <link rel="stylesheet" href="/css/bootstrap.css">
   <meta name="description" content="">
   <meta property="og:title" content="">
@@ -15,14 +15,14 @@
   <meta property="og:image:alt" content="">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
   <style>
     /* Image container styles */
     .bg-image {
       position: relative;
-      background-image: url('../img/world_map.png');
+      background-image: url('/img/world_map.png');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -64,7 +64,7 @@
     }
 
     .image-container img {
-      max-width: 30%; /* Adjusted image size to fit well on the screen */
+      max-width: 20%; /* Adjusted image size to fit well on the screen */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -149,12 +149,26 @@
     .search-bar .input-group-text {
       padding: 5px 5px; /* Réduire le padding des icônes */
     }
+
+    #redirect-button {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Positionné par rapport à la fenêtre */
+    bottom: 20px; /* 20px depuis le bas de l'écran */
+    right: 20px; /* 20px depuis le bord droit */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
   </style>
 </head>
 
-
-
 <body>
+
 <!-- Background image -->
 <div class="bg-image">
   <div class="mask"></div>
@@ -174,38 +188,43 @@
     </div>
   </div>
 
-  <div class="content container">
-    <!-- Title -->
-
-    <!-- Images -->
     <div class="content">
       <!-- Image container for the two images -->
       <div class="image-container">
-        <img src="/img/image_Antartique.jpg" alt="Carte du monde">
-        <img src="/img/image_inflamation.jpg" alt="Carte du monde">
+        <img src="/img/poumon.jpg" alt="Carte du monde">
+        <img src="/img/Plancton.jpg" alt="Carte du monde">
       </div>
 
+      <h1>Les Poumons et le Plancton Océanique</h1>
 
-    <h1>Impact Global de Perturbations Locales</h1>
+      <!-- Fonctionnement Section -->
+      <div class="section-box">
+        <h3>Fonctionnement</h3>
+        <p><strong>Les poumons humains</strong> absorbent l’oxygène et rejettent le dioxyde de carbone, assurant la respiration.</p>
+        <p><strong>Le phytoplancton</strong> produit plus de 50 % de l’oxygène mondial grâce à la photosynthèse, jouant un rôle clé dans le cycle du carbone.</p>
+      </div>
 
-    <!-- Fonctionnement Section -->
-    <div class="section-box">
-      <h3>Fonctionnement</h3>
-      <p><strong>Océan Austral :</strong> La dislocation des plateformes glaciaires ou la dérive des icebergs affecte non seulement les communautés benthiques locales, mais aussi des écosystèmes à grande échelle, illustrant l’interconnexion des systèmes.</p>
-      <p><strong>Corps humain :</strong> Une blessure ou une inflammation localisée (comme une infection dans une région spécifique) peut entraîner des répercussions systémiques, comme de la fièvre ou une septicémie, prouvant l’interdépendance des parties du corps.</p>
+      <!-- Bénéfices Section -->
+      <div class="section-box">
+        <h3>Bénéfices d’un bon fonctionnement</h3>
+        <p><strong>Des poumons sains</strong> garantissent une bonne respiration, essentielle à la vie.</p>
+        <p><strong>Un phytoplancton abondant</strong> maintient un équilibre en oxygène dans l’atmosphère et absorbe le dioxyde de carbone.</p>
+      </div>
+
+      <!-- Dysfonctionnements Section -->
+      <div class="section-box">
+        <h3>Dysfonctionnements</h3>
+        <p><strong>Les maladies pulmonaires</strong>, comme l’asthme, limitent la respiration, privant le corps d’oxygène.</p>
+        <p><strong>Une diminution du phytoplancton</strong>, causée par la pollution et le réchauffement des océans, réduit la production d’oxygène et aggrave les changements climatiques.</p>
+      </div>
+
+      <div class="jumbotron justify-content-center text-center mt-auto p-2">
+        
+
+      </div>
     </div>
 
-    <!-- Conséquences Section -->
-    <div class="section-box">
-      <h3>Conséquences communes</h3>
-      <p><strong>Pour l’océan :</strong> La perte de la glace provoque des perturbations dans la biodiversité marine locale et mondiale.</p>
-      <p><strong>Pour le corps :</strong> Une inflammation prolongée peut entraîner des complications comme des lésions organiques ou une réponse immunitaire déséquilibrée.</p>
-    </div>
 
-    <!-- Button -->
-    <button class="btn btn-primary" onclick="window.location.href='/index.html'">Retour à l'accueil</button>
-  </div>
-</div>
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+.map__image path{
+  fill: #2c0b0e;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+
+.oceans path{
+  fill: #0dcaf0;
+  stroke: #FFF;
+  stroke-width: 1px;
+  transition: fill 0.3s;
+}
+
+.oceans path:hover{
+  fill: #0a53be;
+}

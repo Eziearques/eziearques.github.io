@@ -1,6 +1,6 @@
 function search() {
   console.log("test")
-  const elem = window.document.getElementById('sr');
+  const elem = document.getElementById('sr');
   const words = elem.text.split(' ');
   const pollutionArray = ["pollution", "plastique", "plastiques", "accumulation", "toxique", "organes", "organe"]
   for (let i = 0; i < words.length; i++) {

@@ -63,7 +63,7 @@
     }
 
     .image-container img {
-      max-width: 25%; /* Adjusted image size to fit well on the screen */
+      max-width: 30%; /* Adjusted image size to fit well on the screen */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -161,7 +161,9 @@
   <div class="search-bar">
     <div class="input-group input-group-lg">
       <div class="input-group-prepend">
-        <span class="input-group-text"><img src="/img/new_logo.webp" alt="Logo"></span>
+        <span class="input-group-text" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+           <img src="/img/new_logo.webp" alt="Logo">
+        </span>
       </div>
       <input type="text" class="form-control" placeholder="Recherche...">
       <div class="input-group-append">

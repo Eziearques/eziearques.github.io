@@ -39,10 +39,9 @@
     <button onclick="window.location.href='page_html/Plancton.html'">Plancton</button>
     <button onclick="window.location.href='page_html/estomac.html'">Decomposateur Marin</button>
     <button onclick="window.location.href='page_html/Pollution.html'">Pollution plastique</button>
-    <button onclick="window.location.href='page_html/Squelette.html'">Squelette</button>
 
     <button type="button" onclick="activateGame()">Gamification</button>
-    <button type="button" onclick="resetVisitedPages()">Réinitialiser les cookies</button>
+    <button type="button" onclick="resetAllCookies()">Réinitialiser les cookies</button>
   </h2>
 
   <div class="map" id="map">
@@ -1012,7 +1011,7 @@
     const imageContainerPlancton = document
       .getElementById("trophy_plancton");
     imageContainerPlancton.innerHTML =
-      `<img src="/trophies/plancton/plancton_void.png" id="plancton_void" alt="">`;
+      `<img src="/trophies/plancton/plancton_normal.png" id="plancton_void" alt="">`;
 
     const imageContainerDna = document
       .getElementById("trophy_dna");

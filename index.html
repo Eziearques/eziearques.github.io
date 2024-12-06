@@ -34,10 +34,9 @@
   <h2>
     <button onclick="window.location.href='page_html/Plancton.html'">Plancton</button>
     <button onclick="window.location.href='page_html/Pollution.html'">Pollution plastique</button>
-    <button onclick="window.location.href='page_html/Squelette.html'">Squelette</button>
 
     <button type="button" onclick="activateGame()">Gamification</button>
-    <button type="button" onclick="resetVisitedPages()">Réinitialiser les cookies</button>
+    <button type="button" onclick="resetAllCookies()">Réinitialiser les cookies</button>
   </h2>
 
   <div class="map" id="map">
@@ -1163,11 +1162,12 @@
 
 
   <div id="trophy_plancton" style="position:fixed; top:20px; left:30px; image-rendering: pixelated;"></div>
-  <div id="trophy_chest" style="position:fixed; top:70px; left:30px; image-rendering: pixelated;"></div>
-  <div id="trophy_schrimp" style="position:fixed; top:120px; left:30px; image-rendering: pixelated;"></div>
-  <div id="trophy_moon" style="position:fixed; top:170px; left:30px; image-rendering: pixelated;"></div>
-  <div id="trophy_thermometer" style="position:fixed; top:220px; left:30px; image-rendering: pixelated;"></div>
-
+  <div id="trophy_dna" style="position:fixed; top:80px; left:40px; image-rendering: pixelated;"></div>
+  <div id="trophy_bear" style="position:fixed; top:125px; left:38px; image-rendering: pixelated;"></div>
+  <div id="trophy_moon" style="position:fixed; top:170px; left:33px; image-rendering: pixelated;"></div>
+  <div id="trophy_thermometer" style="position:fixed; top:224px; left:36px; image-rendering: pixelated;"></div>
+  <div id="trophy_recycle" style="position:fixed; top:270px; left:36px; image-rendering: pixelated;"></div>
+  <div id="trophy_bottle" style="position:fixed; top:320px; left:42px; image-rendering: pixelated;"></div>
 
   <script>
     // You can dynamically set the innerHTML
@@ -1175,27 +1175,37 @@
     const imageContainerPlancton = document
       .getElementById("trophy_plancton");
     imageContainerPlancton.innerHTML =
-      `<img src="/trophies/plancton/plancton_void.png" id="plancton_void" alt="">`;
+      `<img src="/trophies/plancton/plancton_normal.png" id="plancton_void" alt="">`;
 
-    const imageContainerChest = document
-      .getElementById("trophy_chest");
-    imageContainerChest.innerHTML =
-      `<img src="/trophies/plancton/plancton_void.png" alt="">`;
+    const imageContainerDna = document
+      .getElementById("trophy_dna");
+    imageContainerDna.innerHTML =
+      `<img src="/trophies/dna/dna_void.png" alt="" style="height:200%; width:auto">`;
 
-    const imageContainerSchrimp = document
-      .getElementById("trophy_schrimp");
-    imageContainerSchrimp.innerHTML =
-      `<img src="/trophies/plancton/plancton_void.png">`;
+    const imageContainerBear = document
+      .getElementById("trophy_bear");
+    imageContainerBear.innerHTML =
+      `<img src="/trophies/bear/bear_void.png" alt="">`;
 
     const imageContainerMoon = document
-      .getElementById("trophy_schrimp");
-    imageContainerSchrimp.innerHTML =
-      `<img src="/trophies/moon/moon_void.png">`;
+      .getElementById("trophy_moon");
+    imageContainerMoon.innerHTML =
+      `<img src="/trophies/moon/moon_void.png" alt="">`;
 
     const imageContainerThermometer = document
       .getElementById("trophy_thermometer");
-    imageContainerSchrimp.innerHTML =
-      `<img src="/trophies/thermometer/thermometer_void.png">`;
+    imageContainerThermometer.innerHTML =
+      `<img src="/trophies/thermometer/thermometer_void.png" alt="">`;
+
+    const imageContainerRecycle = document
+      .getElementById("trophy_recycle");
+    imageContainerRecycle.innerHTML =
+      `<img src="/trophies/recycle/recycle_void.png" alt="">`;
+
+    const imageContainerBottle = document
+      .getElementById("trophy_bottle");
+    imageContainerBottle.innerHTML =
+      `<img src="/trophies/bottle/bottle_void.png" alt="">`;
   </script>
 
 

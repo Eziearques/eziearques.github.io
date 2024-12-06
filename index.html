@@ -1002,8 +1002,9 @@
   <div id="trophy_dna" style="position:fixed; top:80px; left:40px; image-rendering: pixelated;"></div>
   <div id="trophy_bear" style="position:fixed; top:125px; left:38px; image-rendering: pixelated;"></div>
   <div id="trophy_moon" style="position:fixed; top:170px; left:33px; image-rendering: pixelated;"></div>
-  <div id="trophy_thermometer" style="position:fixed; top:220px; left:36px; image-rendering: pixelated;"></div>
-
+  <div id="trophy_thermometer" style="position:fixed; top:224px; left:36px; image-rendering: pixelated;"></div>
+  <div id="trophy_recycle" style="position:fixed; top:270px; left:36px; image-rendering: pixelated;"></div>
+  <div id="trophy_bottle" style="position:fixed; top:320px; left:42px; image-rendering: pixelated;"></div>
 
   <script>
     // You can dynamically set the innerHTML
@@ -1032,6 +1033,16 @@
       .getElementById("trophy_thermometer");
     imageContainerThermometer.innerHTML =
       `<img src="/trophies/thermometer/thermometer_void.png" alt="">`;
+
+    const imageContainerRecycle = document
+      .getElementById("trophy_recycle");
+    imageContainerRecycle.innerHTML =
+      `<img src="/trophies/recycle/recycle_void.png" alt="">`;
+
+    const imageContainerBottle = document
+      .getElementById("trophy_bottle");
+    imageContainerBottle.innerHTML =
+      `<img src="/trophies/bottle/bottle_void.png" alt="">`;
   </script>
 
 

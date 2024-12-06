@@ -37,7 +37,7 @@
     <button onclick="window.location.href='page_html/Glacier.html'">Glacier</button>
     <button onclick="window.location.href='page_html/Plancton.html'">Plancton</button>
     <button onclick="window.location.href='page_html/estomac.html'">Decomposateur Marin</button>
-    <button onclick="window.location.href='page_html/page4.html'">Aller à la page 4</button>
+    <button onclick="window.location.href='page_html/Pollution.html'">Pollution plastique</button>
     <button onclick="window.location.href='page_html/page5.html'">Aller à la page 5</button>
 
     <button type="button" onclick="activateGame()">Gamification</button>
@@ -48,6 +48,7 @@
     <div class="map__image">
 
       <svg
+        version="1.1"
         id="svg1"
         width="1920"
         height="1080"
@@ -1000,7 +1001,7 @@
   <div id="trophy_plancton" style="position:fixed; top:20px; left:30px; image-rendering: pixelated;"></div>
   <div id="trophy_chest" style="position:fixed; top:70px; left:30px; image-rendering: pixelated;"></div>
   <div id="trophy_schrimp" style="position:fixed; top:120px; left:30px; image-rendering: pixelated;"></div>
-  <div id="trophy_1" style="position:fixed; top:170px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_moon" style="position:fixed; top:170px; left:30px; image-rendering: pixelated;"></div>
   <div id="trophy_2" style="position:fixed; top:220px; left:30px; image-rendering: pixelated;"></div>
 
 
@@ -1020,7 +1021,12 @@
     const imageContainerSchrimp = document
       .getElementById("trophy_schrimp");
     imageContainerSchrimp.innerHTML =
-      `<img src="/trophies/plancton/plancton_void.png" alt="">`;
+      `<img src="/trophies/plancton/plancton_void.png">`;
+
+    const imageContainerMoon = document
+      .getElementById("trophy_schrimp");
+    imageContainerSchrimp.innerHTML =
+      `<img src="/trophies/moon/moon_void.png">`;
   </script>
 
 

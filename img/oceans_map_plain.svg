@@ -56,7 +56,7 @@
        id="Sericus_west" />
     <path
        style="display:inline;fill:#9fdbe9;fill-opacity:1;stroke:#d5fbf7;stroke-width:12.015;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 161.42128,1080 H 1801.4088 v 498.8246 H 161.42128 Z"
+       d="M 161.42128,1080 C 761.27953,961.86005 1307.942,961.86005 1801.4088,1080 v 498.8246 H 161.42128 Z"
        id="Antarcticus" />
     <path
        style="fill:#9fdbe9;stroke:#d5fbf7;stroke-width:7;stroke-linecap:round;stroke-linejoin:round"

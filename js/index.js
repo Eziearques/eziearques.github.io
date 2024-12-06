@@ -1,6 +1,18 @@
 // Variables globales
 let game = 0; // État de la gamification (0 = désactivée, 1 = activée)
 
+const list = JSON.parse(localStorage.getItem('trophys')) || [];
+
+console.log(list);
+list.forEach(id => {
+  console.log(id);
+  const element = document.getElementById(id);
+  if (element) {
+    element.style.display = 'none';
+    console.log('Updated display of trophy ' + id + ' to none');
+  }
+})
+
 // Restaurer l'état de la variable 'game' depuis localStorage au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     const savedGame = localStorage.getItem('game');
@@ -51,6 +63,7 @@ function activateGame() {
 
     // Sauvegarder l'état de 'game' dans localStorage
     localStorage.setItem('game', game);
+    localStorage.setItem('trophys', JSON.stringify([]));
     console.log(`Game sauvegardé dans localStorage: ${game}`);
 
     // Mettre à jour la visibilité du bouton

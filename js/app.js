@@ -1,7 +1,7 @@
 // Variable globale
 let game = 0; // défi gamification
 const sitePages = [
-    'page_html/page1.html',
+    'page_html/Fievre_Blanchissement.html',
     'page_html/page2.html',
     'page_html/page3.html',
     'page_html/page4.html',
@@ -31,7 +31,7 @@ function activateGame() {
         game = 1;
         console.log("La variable game est maintenant :", game);
         alert("Gamification activée !");
-        
+
         // Vérifie si un cookie "session" existe
         if (!getCookie("session")) {
             creation_cookie_session();

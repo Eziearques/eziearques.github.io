@@ -1,8 +1,12 @@
-.land path{
-  fill: #4e1d0a;
+.lands path{
+  fill: #3c7531;
   stroke: #FFF;
   stroke-width: 1px;
   transition: fill 0.3s;
+}
+
+.lands path:hover{
+  fill: #e4e11e;
 }
 
 .icons path:hover{

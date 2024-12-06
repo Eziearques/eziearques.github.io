@@ -48,7 +48,7 @@ function activateGame() {
     game = game === 0 ? 1 : 0; // Alterne l'état de game
     console.log(`Game est maintenant: ${game}`);
     alert(game === 1 ? "Gamification activée !" : "Gamification désactivée !");
-    
+
     // Sauvegarder l'état de 'game' dans localStorage
     localStorage.setItem('game', game);
     console.log(`Game sauvegardé dans localStorage: ${game}`);
@@ -81,3 +81,20 @@ function resetAllCookies() {
     alert("Tous les cookies ont été réinitialisés.");
     console.log("Tous les cookies ont été supprimés.");
 }
+
+// Fonction pour cliquer sur les pays
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all elements with the class "clickable"
+  const clickableElements = document.querySelectorAll('.land');
+
+  clickableElements.forEach(element => {
+    element.addEventListener('click', function() {
+      // Extract the ID of the clicked element
+      const id = this.id;
+      // Construct the URL
+      const url = `page_html/Temperature.html?code=${id}`;
+      // Redirect to the URL
+      window.location.href = url;
+    });
+  });
+});

@@ -3,7 +3,7 @@ let game = 0; // défi gamification
 const sitePages = [
     'page_html/Fievre_Blanchissement.html',
     'page_html/Plancton.html',
-    'page_html/page3.html',
+    'page_html/estomac.html',
     'page_html/page4.html',
     'page_html/page5.html'
 ];

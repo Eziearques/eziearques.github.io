@@ -1,11 +1,10 @@
 // Variable globale
 let game = 0; // défi gamification
 const sitePages = [
+    'page_html/Biodiversite.html',
+    'page_html/Glacier.html',
+    'page_html/Muscle_Maree.html',
     'page_html/Fievre_Blanchissement.html',
-    'page_html/Plancton.html',
-    'page_html/page3.html',
-    'page_html/page4.html',
-    'page_html/page5.html'
 ];
 
 // Fonction pour obtenir la valeur d'un cookie
@@ -66,7 +65,7 @@ function resetVisitedPages() {
 // Fonction pour afficher une image avec succès
 function showImageOnSuccess(nom_succes) {
     const image = document.createElement('img'); // Crée un élément image
-    image.src = 'img/succes/' + nom_succes + '.png'; // Chemin de votre image
+    image.src = 'img/succes/Explorateur.png'; // Chemin de votre image
     image.alt = 'Succès'; // Ajoute un texte alternatif
     image.className = 'animated-image'; // Ajoute la classe CSS pour les styles/animations
 
@@ -85,13 +84,16 @@ visitedPages = visitedPages ? visitedPages.split(',') : [];
 // Identifier la page actuelle
 const currentPage = window.location.pathname.replace(/^\//, ''); // Extrait le chemin relatif
 
+
+
 // Ajouter la page actuelle aux pages visitées si elle n'est pas déjà présente
 if (!visitedPages.includes(currentPage)) {
     visitedPages.push(currentPage);
     setCookie('visitedPages', visitedPages.join(',')); // Met à jour le cookie
+    console.log('Pages visitées :', visitedPages);
 }
 
 // Vérifier si toutes les pages ont été visitées
 if (sitePages.every(page => visitedPages.includes(page))) {
-    showImageOnSuccess('Explorateur'); // Appelle la fonction avec le nom de l'image
+    showImageOnSuccess(); // Appelle la fonction avec le nom de l'image
 }

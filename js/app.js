@@ -3,7 +3,8 @@ let game = 0; // défi gamification
 const sitePages = [
     'page_html/Biodiversite.html',
     'page_html/Glacier.html',
-    'page_html/Muscle_Maree.html'
+    'page_html/Muscle_Maree.html',
+    'page_html/Fievre_Blanchissement.html',
 ];
 
 // Fonction pour obtenir la valeur d'un cookie

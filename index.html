@@ -85,7 +85,7 @@
             d="m 0,1080 h 622.95351 l -0.31184,-48.5686 -8.79589,-46.97733 52.78337,-178.04833 -74.70611,-100.77043 -7.21031,-8.07804 -5.85339,5.14342 -17.33943,-5.28543 2.79262,-11.72264 -76.1813,-42.31166 L 421.56051,453.25422 209.90408,311.9253 0,304.79724 Z"
             id="Sericus_west" />
           <path
-            d="M 161.42128,1080 H 1801.4088 v 498.8246 H 161.42128 Z"
+            d="M 161.42128,1080 C 761.27953,961.86005 1307.942,961.86005 1801.4088,1080 v 498.8246 H 161.42128 Z"
             id="Antarcticus" />
           <path
             d="m 910.20413,579.09791 -0.0647,-17.78773 42.94931,-46.42362 44.80336,-20.68461 49.6831,30.98688 16.6458,29.5515 44.765,3.70981 3.9572,44.51773 -60.8409,0.49464 -66.50082,26.63046 z"
@@ -986,6 +986,36 @@
   <script src="js/app.js"></script>
 
   <!--<img src="img/world_map.png">-->
+
+
+  <div id="trophy_plancton" style="position:fixed; top:20px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_chest" style="position:fixed; top:70px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_schrimp" style="position:fixed; top:120px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_1" style="position:fixed; top:170px; left:30px; image-rendering: pixelated;"></div>
+  <div id="trophy_2" style="position:fixed; top:220px; left:30px; image-rendering: pixelated;"></div>
+
+
+  <script>
+    // You can dynamically set the innerHTML
+    // of a container to include an image element
+    const imageContainerPlancton = document
+      .getElementById("trophy_plancton");
+    imageContainerPlancton.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png", id="plancton_void", alt="">`;
+
+    const imageContainerChest = document
+      .getElementById("trophy_chest");
+    imageContainerChest.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png">`;
+
+    const imageContainerSchrimp = document
+      .getElementById("trophy_schrimp");
+    imageContainerSchrimp.innerHTML =
+      `<img src="/trophies/plancton/plancton_void.png">`;
+  </script>
+
+
+
 
 </body>
 

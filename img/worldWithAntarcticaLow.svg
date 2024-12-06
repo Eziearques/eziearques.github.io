@@ -25,9 +25,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.50541665"
-     inkscape:cx="599.50538"
-     inkscape:cy="727.12286"
+     inkscape:zoom="0.71476708"
+     inkscape:cx="1060.4853"
+     inkscape:cy="891.89894"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -93,9 +93,10 @@
        inkscape:label="Sericus west" />
     <path
        style="display:inline;fill:#9fdbe9;fill-opacity:1;stroke:#d5fbf7;stroke-width:12.015;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 161.42128,1080 H 1801.4088 v 498.8246 H 161.42128 Z"
+       d="M 161.42128,1080 C 761.27953,961.86005 1307.942,961.86005 1801.4088,1080 v 498.8246 H 161.42128 Z"
        id="Antarcticus"
-       inkscape:label="Antarcticus" />
+       inkscape:label="Antarcticus"
+       sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#9fdbe9;stroke:#d5fbf7;stroke-width:7;stroke-linecap:round;stroke-linejoin:round"
        d="m 910.20413,579.09791 -0.0647,-17.78773 42.94931,-46.42362 44.80336,-20.68461 49.6831,30.98688 16.6458,29.5515 44.765,3.70981 3.9572,44.51773 -60.8409,0.49464 -66.50082,26.63046 z"

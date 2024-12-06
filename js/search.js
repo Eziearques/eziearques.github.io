@@ -1,4 +1,5 @@
 function search() {
+  console.log("test")
   const elem = getElementById('sr');
   const words = elem.text.split(' ');
   const pollutionArray = ["pollution", "plastique", "plastiques", "accumulation", "toxique", "organes", "organe"]

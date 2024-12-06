@@ -180,7 +180,12 @@ const countryCapitals = {
   
 
 // Votre clé API OpenWeatherMap
-const API_KEY = '3c6d8ee4793a49e3ac1db76e5db923bd'; // Remplacez par votre clé API
+const API_KEY = '519229d4ef90867d21e905506d58ccdb'; // Remplacez par votre clé API
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const code = urlParams.get('code'); // 'code' est le nom du paramètre
+
 
 // Fonction pour récupérer la météo
 async function getWeather(city) {
@@ -191,7 +196,7 @@ async function getWeather(city) {
             throw new Error('Ville non trouvée');
         }
         const data = await response.json();
-        displayWeather(data);
+        displayWeather(data); // Appel de la fonction pour afficher les résultats
     } catch (error) {
         alert(error.message);
     }
@@ -201,13 +206,19 @@ async function getWeather(city) {
 function displayWeather(data) {
     document.getElementById('city-name').textContent = `Météo à ${data.name}`;
     document.getElementById('temperature').textContent = `Température : ${data.main.temp}°C`;
-    document.getElementById('description').textContent = `Conditions : ${data.weather[0].description}`;
-
+    
     // Afficher la section des résultats
     document.getElementById('weather-result').style.display = 'block';
 }
 
-
+// Vérifier si le paramètre 'code' est valide et l'utiliser dans la fonction getWeather
+if (code && code.length === 2) {
+    //document.getElementById('result').textContent = `Le code est: ${code}`;
+    // Appel de la fonction getWeather avec le code récupéré comme ville
+    getWeather(code); // Vous pouvez ici remplacer 'code' par une ville en fonction de ce que vous attendez
+} else {
+    document.getElementById('result').textContent = 'Le code n\'est pas valide ou absent.';
+}
 
 // Ajout d'un écouteur d'événement
 document.getElementById('get-weather').addEventListener('click', () => {

@@ -180,24 +180,11 @@ const countryCapitals = {
 
 
   const API_KEY = '3c6d8ee4793a49e3ac1db76e5db923bd'; 
-  
-async function getWeatherForecast(city) {
-  
-    city=countryCapitals[city]
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`);
-        if (!response.ok) {
-            throw new Error('Ville non trouvée');
-        }
-        const data = await response.json();
-        displayForecast(data);
-    } catch (error) {
-        alert(error.message);
-    }
-}
 
+
+// Fonction pour récupérer les prévisions météo
 async function getWeatherForecast(city) {
-    city = countryCapitals[city];
+    city = countryCapitals[city]; // On récupère la capitale en fonction du pays
     if (!city) {
         alert('Code de pays non valide');
         return;
@@ -208,12 +195,13 @@ async function getWeatherForecast(city) {
             throw new Error('Ville non trouvée');
         }
         const data = await response.json();
-        displayForecast(data);
+        displayForecast(data); // Appel de la fonction pour afficher les prévisions
     } catch (error) {
         alert(error.message);
     }
 }
 
+// Fonction pour afficher les prévisions météo
 function displayForecast(data) {
     document.getElementById('city-name').textContent = `Prévisions pour ${data.city.name}`;
     const forecastContainer = document.getElementById('forecast-container');
@@ -233,11 +221,15 @@ function displayForecast(data) {
     document.getElementById('weather-result').style.display = 'block';
 }
 
+// Ajouter un écouteur d'événement pour récupérer les prévisions
 document.getElementById('get-weather').addEventListener('click', () => {
     const city = document.getElementById('city-input').value;
     if (city) {
-        getWeatherForecast(city);
+        getWeatherForecast(city); // Appel de la fonction avec le pays (capitale)
     } else {
         alert('Veuillez entrer un code de pays');
     }
 });
+
+
+
